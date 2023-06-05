@@ -1,20 +1,28 @@
 package pe.com.fitfuel.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Nutricionista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name="dni")
     private Integer dni;
+    @NotBlank
+    @Column(name="profesion")
     private String profesion;
+    @NotBlank
+    @Column(name="descripcion")
     private String descripcion;
+    @Column(name="foto")
     private String foto;
+    @Column(name="video")
     private String video;
+    @Column(name="estado")
     private boolean estado;
 
     public Integer getId() {

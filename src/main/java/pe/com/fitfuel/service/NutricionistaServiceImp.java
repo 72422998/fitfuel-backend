@@ -1,14 +1,21 @@
 package pe.com.fitfuel.service;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import pe.com.fitfuel.models.Nutricionista;
 import pe.com.fitfuel.repository.NutricionistaRepositorio;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Service
+@Transactional
 public class NutricionistaServiceImp implements NutricionistaService{
     @Autowired
     private NutricionistaRepositorio nutricionistaRepositorio;
@@ -40,4 +47,6 @@ public class NutricionistaServiceImp implements NutricionistaService{
         nutricionistaRepositorio.deleteById(n.getId());
         return null;
     }
+
+
 }

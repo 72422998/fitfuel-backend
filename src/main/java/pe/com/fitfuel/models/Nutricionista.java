@@ -15,7 +15,6 @@ public class Nutricionista {
     @NotBlank
     @Column(name="profesion")
     private String profesion;
-
     @NotBlank
     @Column(name="descripcion")
     private String descripcion;

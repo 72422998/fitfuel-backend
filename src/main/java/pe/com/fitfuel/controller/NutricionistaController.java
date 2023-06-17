@@ -27,6 +27,14 @@ public class NutricionistaController {
         logger.debug("Se encontraron {} nutricionistas",nutricionista.size());
         return  ResponseEntity.ok(nutricionista);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Nutricionista> findById(@PathVariable Integer id){
+        Nutricionista nutricionista = nutricionistaService.findById(id);
+        if(nutricionista == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Nutricionista no encontrado");
+        }
+        return ResponseEntity.ok(nutricionista);
+    }
     @PostMapping("/save")
     public ResponseEntity<Nutricionista> add(@RequestBody Nutricionista n){
         logger.info("Metodo add() invocado");

@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'appfitfuelt'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CFDE04613E5345C18A58FD5068FAC072 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F41F491BBD954C88A5005687E69D4FB3 }}
           package: '*.jar'

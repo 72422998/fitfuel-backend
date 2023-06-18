@@ -1,89 +1,45 @@
 package pe.com.fitfuel.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Nutricionista {
     @Id
+    @Column(name="nut_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name="dni")
     private Integer dni;
+    @Column(name="nombre")
+    private String nombre;
+    @Column(name="apellido")
+    private String apellido;
+    @Column(name="profesion")
     private String profesion;
+    @Column(name="descripcion")
     private String descripcion;
+    @Column(name="foto")
     private String foto;
+    @Column(name="video")
     private String video;
+    @Column(name="categoria")
+    private String categoria;
+    @Column(name="estado")
     private boolean estado;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getDni() {
-        return dni;
-    }
-
-    public void setDni(Integer dni) {
-        this.dni = dni;
-    }
-
-    public String getProfesion() {
-        return profesion;
-    }
-
-    public void setProfesion(String profesion) {
-        this.profesion = profesion;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    public String getVideo() {
-        return video;
-    }
-
-    public void setVideo(String video) {
-        this.video = video;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-
-    public Nutricionista(Integer id, Integer dni, String profesion, String descripcion, String foto, String video, boolean estado) {
-        this.id = id;
-        this.dni = dni;
-        this.profesion = profesion;
-        this.descripcion = descripcion;
-        this.foto = foto;
-        this.video = video;
-        this.estado = estado;
-    }
-
-    public Nutricionista() {
-
-    }
+    @Column(name="whatsapp")
+    private String whatsapp;
+    @Column(name="instagram")
+    private String instagram;
+    @Column(name="facebook")
+    private String facebook;
+    @Column(name="linkedin")
+    private String linkedin;
 }

@@ -1,5 +1,6 @@
 package pe.com.fitfuel.service;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +9,9 @@ import pe.com.fitfuel.repository.NutricionistaRepositorio;
 
 import java.util.List;
 
+
 @Service
+@Transactional
 public class NutricionistaServiceImp implements NutricionistaService{
     @Autowired
     private NutricionistaRepositorio nutricionistaRepositorio;
@@ -40,4 +43,6 @@ public class NutricionistaServiceImp implements NutricionistaService{
         nutricionistaRepositorio.deleteById(n.getId());
         return null;
     }
+
+
 }

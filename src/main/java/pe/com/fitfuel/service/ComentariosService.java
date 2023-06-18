@@ -1,6 +1,5 @@
 package pe.com.fitfuel.service;
 
-import pe.com.fitfuel.models.Citas;
 import pe.com.fitfuel.models.Comentarios;
 
 import java.util.List;
